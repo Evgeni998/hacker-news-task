@@ -24,12 +24,13 @@ const App = () => {
           {stories.map((story, index) => {
             const { title, url, time, score } = story;
             const { id, karma } = users[index];
+            let date = new Date(time * 1000).toISOString().split("T")[0];
             return (
               <Card
                 key={index}
                 title={title}
                 url={url}
-                time={time}
+                time={date}
                 score={score}
                 id={id}
                 karma={karma}
